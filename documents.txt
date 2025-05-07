@@ -1,0 +1,2 @@
+LangChain est une bibliothèque pour construire des applications LLM modulaires.
+Elle permet de combiner plusieurs composants comme les prompts, modèles, outils et mémoires.
