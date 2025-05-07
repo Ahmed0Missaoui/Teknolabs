@@ -1,13 +1,22 @@
+from dotenv import load_dotenv
+import os
+
 from langchain_groq import ChatGroq
 from langchain.agents import initialize_agent, Tool
 from langchain.memory import ConversationBufferMemory
 from langchain.agents.agent_types import AgentType
 from langchain_community.tools import DuckDuckGoSearchRun
+
+
+load_dotenv()
+groq_api_key = os.getenv("GROQ_API_KEY")
+
 modele = ChatGroq(
     temperature=0,
     model="llama3-70b-8192",
-    groq_api_key="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"
+    groq_api_key=groq_api_key
 )
+
 recherche = DuckDuckGoSearchRun()
 outils = [
     Tool(
@@ -25,6 +34,7 @@ agent = initialize_agent(
     memory=memoire,
     handle_parsing_errors=True
 )
+
 if __name__ == "__main__":
     resultat_1 = agent.invoke({"input": "Je m'appelle Ahmed."})
     print("🤖 Réponse 1 :", resultat_1["output"])
