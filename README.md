@@ -1,26 +1,33 @@
-smart_agent.py Crée un agent simple capable de répondre à des questions grâce à des outils comme SerpAPI et LLM-Math. Exemple : Répondre à "Quelle est la capitale de la Tunisie ?".
+Description des modules du projet
 
-rag_chain.py Met en place une chaîne Retrieval Question Answering (RAG) :
+    smart_agent.py
+    Implémente un agent intelligent capable de répondre à des questions simples en s'appuyant sur des outils comme SerpAPI pour la recherche web et LLM-Math pour les calculs.
+    🔹 Exemple : "Quelle est la capitale de la Tunisie ?"
 
-Charge un fichier de documents et génère des embeddings pour les indexer avec FAISS.
+    rag_chain.py
+    Met en œuvre une chaîne RAG (Retrieval-Augmented Generation) permettant de répondre à des questions spécifiques à partir d’un ensemble de documents.
+    🔹 Chargement des documents
+    🔹 Génération d’embeddings
+    🔹 Indexation avec FAISS
+    🔹 Recherche contextuelle d’informations
 
-Permet de répondre à une question précise en récupérant l'information dans les documents.
+    memory_agent.py
+    Développe un agent conversationnel doté de mémoire contextuelle grâce à ConversationBufferMemory.
+    🔹 Suit l’historique de la conversation
+    🔹 S’adapte aux informations fournies par l’utilisateur
+    🔹 Exemple : Se souvient du prénom donné dans un échange précédent
 
-memory_agent.py Met en œuvre un agent avec mémoire conversationnelle :
-Garde un historique des échanges en utilisant ConversationBufferMemory.
+    main.py
+    Script principal qui montre comment utiliser les agents avec des prompts dynamiques basés sur des templates.
+    🔹 Exemple : Générer une liste de plats populaires en fonction d’un type de cuisine donné
 
-Gère intelligemment les interactions. Exemple : L'agent se souvient du prénom donné par l'utilisateur.
+    prompts.py
+    Contient les modèles de prompts utilisés dans le projet.
+    🔹 Exemple de prompt : "Donne-moi {n} plats populaires de la cuisine {cuisine}."
 
-main.py Montre un exemple d'exécution avec un prompt dynamique basé sur un template. Exemple : Générer une liste de plats populaires pour une cuisine donnée.
-
-prompts.py Fichier contenant le template de prompt utilisé dans main.py. Exemple : "Donne-moi {n} plats populaires de la cuisine {cuisine}."
-
-requirements.txt Liste des dépendances nécessaires (LangChain, FAISS, dotenv, etc.) à l'exécution du projet.
-
-Fonctionnalités Création et gestion d'agents intelligents.
-
-Récupération d'informations dans des documents grâce à RAG.
-
-Utilisation d'une mémoire conversationnelle pour des interactions continues.
-
-Génération de contenu à l'aide de prompts personnalisables.
+    requirements.txt
+    Spécifie les dépendances nécessaires pour faire fonctionner le projet :
+    🔹 langchain
+    🔹 faiss-cpu
+    🔹 python-dotenv
+    🔹 et d’autres bibliothèques utiles
